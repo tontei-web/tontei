@@ -1,12 +1,9 @@
 /* ===== 基本設定 ===== */
 
-section {
-  padding: 120px 20px;
-}
 body {
   margin: 0;
   font-family: 'Noto Serif JP', serif;
-  padding-top: 70px; /* 固定ヘッダー分 */
+  padding-top: 70px;
   background: #ffffff;
 }
 
@@ -14,6 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ✅ 修正：sectionのpadding重複を削除して1つに */
 section {
   padding: 100px 20px;
 }
@@ -31,6 +29,7 @@ section {
   align-items: center;
   padding: 15px 40px;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -44,6 +43,7 @@ section {
   gap: 30px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .header a {
@@ -58,14 +58,33 @@ section {
   color: #c40000;
 }
 
+/* ✅ 修正：重複していた電話ボタンを1つに統合 */
+.header ul li:last-child a {
+  background: #c40000;
+  padding: 10px 22px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 15px rgba(196,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.header ul li:last-child a:hover {
+  background: #a00000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(196,0,0,0.5);
+}
+
 /* ===== ヒーロー ===== */
 
 .hero {
   height: 100vh;
   background: url("tonkatsu.jpg") center/cover no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
   color: white;
   position: relative;
@@ -94,6 +113,29 @@ section {
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.3);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.hero-cta {
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #c40000;
+  color: white;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #8b0000;
+  transform: scale(1.05);
 }
 
 /* ===== メニュー ===== */
@@ -156,7 +198,7 @@ section {
   color: #8b0000;
 }
 
-/* ===== お知らせ（目立つ版） ===== */
+/* ===== お知らせ ===== */
 
 .news-top {
   background: #faf7f2;
@@ -197,6 +239,37 @@ section {
   font-weight: bold;
 }
 
+/* ✅ 追加：news-itemのスタイル */
+.news-item {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ✅ 追加：news-dateのスタイル */
+.news-date {
+  font-size: 13px;
+  color: #999;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ✅ 追加：news-linkのスタイル */
+.news-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #c40000;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
 /* ===== 店舗情報 ===== */
 
 .info {
@@ -211,6 +284,22 @@ section {
   margin-bottom: 40px;
 }
 
+/* ✅ 追加：reserveのスタイル */
+.reserve {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 2;
+}
+
+.reserve-phone {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #c40000;
+  text-decoration: none;
+}
+
 .info-container {
   display: flex;
   justify-content: center;
@@ -220,9 +309,10 @@ section {
 
 .map iframe {
   width: 100%;
+  max-width: 800px;
   height: 350px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 /* ===== フッター ===== */
@@ -235,100 +325,7 @@ section {
   font-size: 14px;
 }
 
-/* ===== スマホ対応 ===== */
-
-@media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 28px;
-    padding: 20px;
-  }
-
-  .hero {
-    padding-top: 100px;
-  }
-
-  .menu-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-card {
-    width: 90%;
-  }
-
-  .info-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-.header ul {
-  align-items: center;
-}
-
-.header ul li:last-child a {
-  background: #c40000;
-  padding: 8px 16px;
-  border-radius: 20px;
-  color: white;
-}
-
-.header ul li:last-child a {
-  background: #c40000;
-  padding: 10px 22px;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 0 6px 15px rgba(196,0,0,0.4);
-  transition: all 0.3s ease;
-}
-
-.header ul li:last-child a:hover {
-  background: #a00000;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(196,0,0,0.5);
-}
-.header a[href^="tel"] {
-  background: #c40000;
-  padding: 8px 14px;
-  border-radius: 20px;
-}
-
-.header a[href^="tel"]:hover {
-  background: #8b0000;
-}
-.hero-cta {
-  position: relative;
-  z-index: 1;
-  margin-top: 30px;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: #c40000;
-  color: white;
-  padding: 15px 35px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  background: #8b0000;
-  transform: scale(1.05);
-}
-.reserve-phone {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #c40000;
-  text-decoration: none;
-}
-/* ===== 固定電話ボタン ===== */
+/* ===== 固定電話ボタン（スマホのみ） ===== */
 
 .fixed-tel {
   position: fixed;
@@ -345,6 +342,7 @@ section {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   z-index: 9999;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .fixed-tel:hover {
@@ -352,9 +350,121 @@ section {
   transform: translateX(-50%) scale(1.05);
 }
 
-/* PCでは非表示 */
 @media (min-width: 769px) {
   .fixed-tel {
     display: none;
+  }
+}
+
+/* ===== お知らせページ ===== */
+
+.news-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.news-page h2 {
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #8b0000;
+  margin-bottom: 50px;
+}
+
+.news-page h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #8b0000;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.news-list {
+  text-align: left;
+}
+
+.news-article {
+  padding: 28px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-article:last-child {
+  border-bottom: none;
+}
+
+.news-article h3 {
+  font-size: 18px;
+  margin: 8px 0 12px;
+  color: #333;
+}
+
+.news-article p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  /* ヘッダー */
+  .header {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .header ul {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .header a {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .header ul li:last-child a {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* ヒーロー */
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    padding: 16px 20px;
+    letter-spacing: 1px;
+  }
+
+  /* CTAボタンはスマホでは非表示（fixed-telがあるので不要） */
+  .hero-cta {
+    display: none;
+  }
+
+  /* メニュー */
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-card {
+    width: 90%;
+  }
+
+  /* 店舗情報 */
+  .info-container {
+    flex-direction: column;
+    gap: 30px;
   }
 }
