@@ -448,8 +448,8 @@ section {
     padding-top: 70px;
     justify-content: flex-start;
     align-items: center;
-    background-position: center top;
-    background-size: 120%;
+    background-size: cover;
+    background-position: center center;
   }
 
   .hero h1 {
@@ -457,6 +457,11 @@ section {
     padding: 16px 20px;
     line-height: 1.8;
     margin-top: 30px;
+  }
+
+  .news-top .menu-card {
+    width: 90%;
+    box-sizing: border-box;
   }
 
   .menu-container {
