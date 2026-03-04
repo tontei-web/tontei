@@ -408,22 +408,19 @@ section {
 
 @media (max-width: 768px) {
 
-  /* ヘッダー */
-  .header {
-    padding: 10px 15px;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
+  /* ① ロゴが縦にならないよう修正 */
   .logo {
     font-size: 20px;
-    letter-spacing: 2px;
     white-space: nowrap;
   }
 
+  /* ② ナビのはみ出しを修正 */
+  .header {
+    padding: 10px 15px;
+  }
+
   .header ul {
-    gap: 8px;
-    flex-wrap: nowrap;
+    gap: 10px;
   }
 
   .header a {
@@ -436,23 +433,20 @@ section {
     font-size: 12px;
   }
 
-  /* ヒーロー */
-  .hero {
-    padding-top: 80px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-    padding: 16px 20px;
-    letter-spacing: 1px;
-  }
-
-  /* CTAボタンはスマホでは非表示（fixed-telがあるので不要） */
+  /* ③ ボタンの重複を修正（fixed-telがあるので不要） */
   .hero-cta {
     display: none;
   }
 
-  /* メニュー */
+  .hero h1 {
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
   .menu-container {
     flex-direction: column;
     align-items: center;
@@ -462,7 +456,6 @@ section {
     width: 90%;
   }
 
-  /* 店舗情報 */
   .info-container {
     flex-direction: column;
     gap: 30px;
