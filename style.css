@@ -258,12 +258,13 @@ section {
 
 /* ✅ 追加：news-linkのスタイル */
 .news-link {
-  display: inline-block;
+  display: block;
   margin-top: 20px;
   color: #c40000;
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .news-link:hover {
@@ -445,15 +446,17 @@ section {
 
   .hero {
     padding-top: 70px;
-    justify-content: center;
-    background-position: center center;
-    background-size: 160%;
+    justify-content: flex-start;
+    align-items: center;
+    background-position: center top;
+    background-size: 120%;
   }
 
   .hero h1 {
-    font-size: 22px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 16px 20px;
     line-height: 1.8;
+    margin-top: 30px;
   }
 
   .menu-container {
