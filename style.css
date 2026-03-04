@@ -433,8 +433,13 @@ section {
     font-size: 12px;
   }
 
-  /* ③ ボタンの重複を修正（fixed-telがあるので不要） */
+  /* ③ ヒーローのCTAボタン非表示（fixed-telがあるので不要） */
   .hero-cta {
+    display: none;
+  }
+
+  /* ④ ヘッダーの電話するボタンも非表示（下の固定ボタンがあるので不要） */
+  .header ul li:last-child {
     display: none;
   }
 
