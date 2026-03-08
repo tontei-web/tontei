@@ -463,11 +463,6 @@ section {
   .news-top .menu-card {
     width: 90%;
     box-sizing: border-box;
-  }
-
-  .news-top .menu-card {
-    width: 90%;
-    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
   }
@@ -479,6 +474,8 @@ section {
 
   .menu-card {
     width: 90%;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .info-container {
