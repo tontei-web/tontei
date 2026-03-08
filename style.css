@@ -5,6 +5,7 @@ body {
   font-family: 'Noto Serif JP', serif;
   padding-top: 70px;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 html {
