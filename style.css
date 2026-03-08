@@ -451,6 +451,7 @@ section {
   }
 
   .hero {
+    height: 50vh;
     padding-top: 70px;
     justify-content: flex-start;
     align-items: center;
